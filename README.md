@@ -26,4 +26,8 @@ In order to match to Riboseq data, I made the decision to assign to all the gene
 
 What this means is that some proteomics values are duplicated but we do not lose any Riboseq identified genes in exchange.
 
+## Machines details
 
+Shell scripts analyses were run on a terminal in Ubuntu 20.04.6 LTS
+
+R Scripts were run on R 4.3.3 and 4.2.2 with no obvious differences in the results (other than slightly more warnings being triggered by using 4.2.2)
