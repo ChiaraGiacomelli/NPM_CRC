@@ -7,3 +7,6 @@ The basis of all analysis are the scripts in the main Riboseq branch of the [Bus
 
 The pause site analysis script was written by Dr. Pauline Herviou, Postdoctoral Scientist in the lab of Martin Bushell at CRUK Scotland Institute.
 
+## Environments
+The analysis is done within specific envirnments as described in the [Riboseq pipeline installation page](https://github.com/Bushell-lab/Ribo-seq/tree/main/Installation)
+The exact composition of the environment used for these analysis is in the Riboseq_environment.yml and RNAseq_environment.yml files in the Environment subfolder
