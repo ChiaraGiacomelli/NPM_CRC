@@ -92,7 +92,7 @@ lfc_shrink <- lfcShrink(dds, coef=paste("condition", treatment, "vs", control, s
 
 ### plot MA on the spot to check for problemns -----
 # if anything weird happens with apeglm shrinkage, consider other shrinking methods
-pdf(file = file.path(parent_dir, "plots/DE_analysis", "MA_totals_unfiltered.pdf"))
+pdf(file = file.path(parent_dir, "plots/DE_analysis", "MA_totals.pdf"))
 FDR = 0.1
 DESeq2::plotMA(res, alpha = FDR, main = paste0("Unshrunken MA-Plot (FDR = ", FDR, ")"), ylim = c(-5,5))
 DESeq2::plotMA(lfc_shrink, alpha = FDR, main = paste0("apeglm MA-Plot (FDR = ", FDR, ")"), ylim = c(-5,5))
