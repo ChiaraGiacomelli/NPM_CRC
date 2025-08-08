@@ -2,6 +2,8 @@
 # At the CRUK Scotland Institute, Glasgow
 
 # The plot function from her script was then adapted to suit the leading edge data from the Gene Set Enrichment Analyses
+# It looks at the presence and position of pause sites (sustained, resolved, or induced upon Npm1 KO) in the gene groups
+# Where the gene groups are those in the Leading Edge of a pathway for both RPFs and Proteomics, or only for one of the two omics approaches
 
 # load libraries & set conflicts ------
 library(tidyverse)
