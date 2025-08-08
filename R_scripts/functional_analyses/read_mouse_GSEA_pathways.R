@@ -1,4 +1,5 @@
 # choose your Machine in the common variables!!!
+# Please note the version of signatures used: This was the first release of MSigDB in 2023
 
 pathways.hallmark <- gmtPathways(paste0(machine_dir, "/CGIACOME/Protocols_and_Documentation/Sequencing/Gene_signatures/msigdb_v2023.1.Mm_GMTs/mh.all.v2023.1.Mm.symbols.gmt"))
 pathways.curated <- gmtPathways(paste0(machine_dir,"/CGIACOME/Protocols_and_Documentation/Sequencing/Gene_signatures/msigdb_v2023.1.Mm_GMTs/m2.all.v2023.1.Mm.symbols.gmt"))
