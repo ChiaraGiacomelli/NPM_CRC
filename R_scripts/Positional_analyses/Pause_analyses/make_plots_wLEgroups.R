@@ -36,7 +36,8 @@ source(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-R
 
 plot_dir <- paste0(parent_dir, "/plots/pauses/")
 
-#import pause tables
+# import pause tables
+# This is also shared here in the GitHub folder
 pauses <- read_csv(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20250117_data_Pauline/NPM_pause_analysis_20250331.csv"))
 
 #import most abundant transcripts info
@@ -46,6 +47,7 @@ most_abundant_transcripts <- read_csv(file = paste0(machine_dir,"/CGIACOME/AAJ_N
 region_lengths <- read_csv(file = paste0(machine_dir, "/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv"),
                                          col_names = c("transcript", "UTR5_len", "CDS_len", "UTR3_len"))
 
+# Codon properties tables are available here in the GitHub folder
 codon_AA <- read_csv(file = file.path(machine_dir,"CGIACOME/AAJ_NPM/20250117_data_Pauline/bioinformatics_resources_codons/codon_amino_acid_pairs_and_properties.csv"))
 codon_anticod <- read_csv(file = file.path(machine_dir,"CGIACOME/AAJ_NPM/20250117_data_Pauline/bioinformatics_resources_codons/codon_anticodon_pairs.csv"))
 
