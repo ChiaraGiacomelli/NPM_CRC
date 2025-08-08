@@ -49,7 +49,7 @@ all_counts %>%
 
 print(head(all_mean_counts))
 
-##definition of a pause from [Gillen et al 2021](https://doi.org/10.1186/s13059-021-02494-w)
+##definition of a pause from Gillen et al 2021 (https://doi.org/10.1186/s13059-021-02494-w)
 #### a pause site in each condition was defined as a position with a RPF peak height ten times greater than the average RPF peak on the mRNA####
 
 #calculate the average RPF occupancy / mRNA in cdss - control
