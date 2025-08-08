@@ -1,4 +1,4 @@
-# Nuclophosmin role in colorectal cancer
+# Nucleophosmin role in colorectal cancer
 The scripts in this repository have been used in the analysis of Riboseq data from a murine colorectal cancer model upon depletion of Nucleophosmin (Npm1).
 
 The project was led by Dr. Georgios Kanellos, Postdoctoral Scientist in the lab of Prof. Owen Sansom at the CRUK Scotland Institute, Glasgow.
