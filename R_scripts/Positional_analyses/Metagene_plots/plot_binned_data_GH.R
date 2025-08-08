@@ -73,8 +73,30 @@ do.call("rbind", summarised_binned_list) %>%
 summary(summarised_binned)
 print(summarised_binned)
 
+#plot lines
+binned_line_plots <- plot_binned_lines(df = summarised_binned, SD = T, control = control, treatment = treatment, colors = c(WT_color, KO_color))
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts binned lines.png"), width = 1000, height = 310)
+grid.arrange(binned_line_plots[[1]], binned_line_plots[[2]], binned_line_plots[[3]], nrow = 1, widths = c(1,2,1.5),
+             top = textGrob(paste(Tissue, TMT, "all transcripts binned"),gp=gpar(fontsize=16,font=2)))
+dev.off()
+
+binned_line_plots_all_replicates <- plot_binned_all_replicates(summarised_binned_list, control = control, treatment = treatment, colors = c(WT_color, KO_color))
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts binned lines all replicates.png"), width = 1000, height = 310)
+grid.arrange(binned_line_plots_all_replicates[[1]], binned_line_plots_all_replicates[[2]], binned_line_plots_all_replicates[[3]], nrow = 1, widths = c(1,2,1.5),
+             top = textGrob(paste(Tissue, TMT, "all transcripts binned"),gp=gpar(fontsize=16,font=2)))
+dev.off()
+
 #calculate and plot delta
 binned_delta_data <- calculate_binned_delta(binned_list, value = "binned_cpm", control = control, treatment = treatment, paired_data = F)
+binned_delta_plots <- plot_binned_delta(binned_delta_data)
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts binned delta.png"), width = 1000, height = 210)
+grid.arrange(binned_delta_plots[[1]], binned_delta_plots[[2]], binned_delta_plots[[3]],
+             nrow = 1, widths = c(1,2,1),
+             top = textGrob(paste(Tissue, TMT, "all transcripts binned"),gp=gpar(fontsize=16,font=2)))
+dev.off()
 
 #positional----
 #normalise within each transcript
@@ -90,8 +112,20 @@ do.call("rbind", summarised_positional_list) %>%
             sd_counts = sd(mean_counts)) %>%
   ungroup() -> summarised_positional
 
+#plot
+positional_line_plots <- plot_positional_lines(df = summarised_positional, SD = T, control = control, treatment = treatment, colors = c(WT_color, KO_color))
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts binned positional lines.png"), width = 500, height = 200)
+print(positional_line_plots)
+dev.off()
+
 #calculate and plot delta
 binned_positional_delta <- calculate_positional_delta(positional_list, control = control, treatment = treatment, paired_data = F)
+positional_binned_delta_plots <- plot_positional_delta(binned_positional_delta)
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts binned positional delta.png"), width = 500, height = 200)
+print(positional_binned_delta_plots)
+dev.off()
 
 #single nt----
 #summarise
@@ -107,13 +141,26 @@ do.call("rbind", summarised_single_nt_list) %>%
 summary(summarised_single_nt)
 print(summarised_single_nt)
 
+#plot
+single_nt_line_plots <- plot_single_nt_lines(summarised_single_nt, SD=T, plot_ends=F, control = control, treatment = treatment, colors = c(WT_color, KO_color))
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts single nt lines.png"), width = 1300, height = 310)
+grid.arrange(single_nt_line_plots[[1]], single_nt_line_plots[[2]], single_nt_line_plots[[3]], single_nt_line_plots[[4]], nrow = 1, widths = c(1,2,2,1.5),
+             top = textGrob(paste(Tissue, TMT, "all transcripts single nt"),gp=gpar(fontsize=16,font=2)))
+dev.off()
+
 #calculate and plot delta
 single_nt_delta_data <- calculate_single_nt_delta(single_nt_list, value = "single_nt_cpm", control = control, treatment = treatment, paired_data = F)
+single_nt_delta_plots <- plot_single_nt_delta(single_nt_delta_data, SD = T)
+
+png(filename = file.path(parent_dir, "plots/binned_plots/all_transcripts/all transcripts single nt delta.png"), width = 1300, height = 210)
+grid.arrange(single_nt_delta_plots[[1]], single_nt_delta_plots[[2]], single_nt_delta_plots[[3]], single_nt_delta_plots[[4]], nrow = 1, widths = c(1,2,2,1),
+             top = textGrob(paste(Tissue, TMT, "all transcripts single nt"),gp=gpar(fontsize=16,font=2)))
+dev.off()
 
 # By Polarity score -----
-# The dataframe is also shared in this data folder in GitHub
+df <- read_tsv(file = file.path(parent_dir,"RiboMiner/NPM_KO_polarity_dataframe.txt"))
 
-df <- read_tsv(file = file.path(parent_dir,"RiboMiner/NPM_KO_polarity_dataframe.txt")) 
 df %>%
   rename(transcript = 1) %>%
   inner_join(most_abundant_transcripts, by = "transcript") %>%
@@ -121,8 +168,10 @@ df %>%
   rowwise() %>%
   mutate(ave_WT = base::mean(c_across(c(4:7)), na.rm = TRUE),
          ave_KO = base::mean(c_across(c(8:11)), na.rm = TRUE),
-         Delta_Polarity = ave_KO - ave_WT) %>%
-  as_tibble() -> df_delta
+         Delta_Polarity = ave_KO - ave_WT) -> df_delta
+
+df_delta <- as.data.frame(df_delta)
+df_delta <- as_tibble(df_delta)
 
 ## by Delta polarity score ----
 
