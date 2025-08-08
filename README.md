@@ -1,8 +1,6 @@
 # Nucleophosmin role in colorectal cancer
 The scripts in this repository have been used in the analysis of Riboseq data from a murine colorectal cancer model upon depletion of Nucleophosmin (Npm1).
 
-The project was led by Dr. Georgios Kanellos, Postdoctoral Scientist in the lab of Prof. Owen Sansom at the CRUK Scotland Institute, Glasgow.
-
 The results have been published in the manuscript titled "Nucleophosmin supports WNT-driven hyperproliferation and tumour initiation" (DOI here)
 
 The basis of all analysis are the scripts in the main Riboseq branch of the [Bushell lab](https://github.com/Bushell-lab/Ribo-seq), developed by Dr. Joseph Waldron, Associate Scientist in the lab of Prof. Martin Bushell at CRUK Scotland Institute.
