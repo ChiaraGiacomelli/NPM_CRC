@@ -9,4 +9,6 @@ The pause site analysis script was written by Dr. Pauline Herviou, Postdoctoral 
 
 ## Environments
 The analysis is done within specific envirnments as described in the [Riboseq pipeline installation page](https://github.com/Bushell-lab/Ribo-seq/tree/main/Installation)
+
 The exact composition of the environment used for these analysis is in the Riboseq_environment.yml and RNAseq_environment.yml files in the Environment subfolder
+
