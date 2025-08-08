@@ -111,8 +111,9 @@ print(summarised_single_nt)
 single_nt_delta_data <- calculate_single_nt_delta(single_nt_list, value = "single_nt_cpm", control = control, treatment = treatment, paired_data = F)
 
 # By Polarity score -----
-df <- read_tsv(file = file.path(parent_dir,"RiboMiner/NPM_KO_polarity_dataframe.txt"))
+# The dataframe is also shared in this data folder in GitHub
 
+df <- read_tsv(file = file.path(parent_dir,"RiboMiner/NPM_KO_polarity_dataframe.txt")) 
 df %>%
   rename(transcript = 1) %>%
   inner_join(most_abundant_transcripts, by = "transcript") %>%
@@ -120,10 +121,8 @@ df %>%
   rowwise() %>%
   mutate(ave_WT = base::mean(c_across(c(4:7)), na.rm = TRUE),
          ave_KO = base::mean(c_across(c(8:11)), na.rm = TRUE),
-         Delta_Polarity = ave_KO - ave_WT) -> df_delta
-
-df_delta <- as.data.frame(df_delta)
-df_delta <- as_tibble(df_delta)
+         Delta_Polarity = ave_KO - ave_WT) %>%
+  as_tibble() -> df_delta
 
 ## by Delta polarity score ----
 
