@@ -1,7 +1,9 @@
 #Set the parent directory (this should be the same directory as is set in the common_variables.sh script
 
+# This file has the basic info used by multiple scripts in the subfolders handling the RPF and RNA reads/samples
+
 # choose your Machine
-# VM
+# VM direct runs
 #machine_dir <- '~/data'
 # Rstudio on Windows at work
 #machine_dir <- 'N:'
@@ -27,5 +29,3 @@ NPM_cols <- c("WT" = "grey34", "KO" = "red3")
 WT_color = "grey34"
 KO_color = "red3"
 
-GOI <- c("Mdm2")
-#"Trp53", "Myc", "Hif1a", "Jun", "Fos", "Apaf1", "Atf4", "Cdkn1a", "Xbp1", "Atf6", "Xiap", 
