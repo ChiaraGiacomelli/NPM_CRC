@@ -19,7 +19,7 @@ The mass spectrometry proteomics data have been deposited to the ProteomeXchange
 
 The analysis is done within specific envirnments as described in the [Riboseq pipeline installation page](https://github.com/Bushell-lab/Ribo-seq/tree/main/Installation)
 
-The exact composition of the environment used for these analysis is in the Riboseq_environment.yml and RNAseq_environment.yml files in the Environment subfolder
+The exact composition of the environment used for these analyses is in the Riboseq_environment.yml and RNAseq_environment.yml files in the Environment subfolder
 
 ## Matching with proteomics data
 
