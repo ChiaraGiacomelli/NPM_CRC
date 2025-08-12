@@ -13,7 +13,7 @@ A key aspect of the project was the integration of Riboseq and proteomics from t
 
 The raw Riboseq / cytoplasmic RNA seq data has been deposited at the Gene Expression Omnibus under the accession [GSE249958](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE249958)
 
-The mass spectrometry proteomics data have been deposited to the ProteomeXchange Consortium via the PRIDE partner repository with the dataset identifier PXD062969 and 10.6019/PXD062969
+The mass spectrometry proteomics data have been deposited to the ProteomeXchange Consortium via the PRIDE partner repository with the dataset identifier [PXD062969](https://www.ebi.ac.uk/pride/archive/projects/PXD062969)
 
 ## Environments
 
