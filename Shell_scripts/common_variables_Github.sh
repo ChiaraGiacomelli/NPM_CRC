@@ -24,7 +24,7 @@ RPF_adaptor='TGGAATTCTCGGGTGCCAAGG' #this is the adaptor used in the nextflex sm
 Totals_adaptor='AGATCGGAAGAG' #this is the adaptor used in the LEXOGEN CORALL Total RNA-Seq Library Prep Kit
 
 ###paths
-parent_dir='/home/local/BICR/cgiacome/data/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
+parent_dir='this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
 
 #The following directories are where all the processed data will be saved. These all need to be created prior to starting the analysis
 
@@ -36,7 +36,7 @@ parent_dir='/home/local/BICR/cgiacome/data/CGIACOME/AAJ_NPM/20230622_RiboSeq_APC
 #fastq_dir='/home/local/BICR/cgiacome/data/R11/Nucleophosmin_RiboSeq/fastq_files' <- this folder now contains the unaligned and the pc_aligned RPFs only
 # please note that in order to do GEO submission, demultiplexed fastq have now been moved into N:/CGIACOME/AAJ_NPM/GEO_submission_nucleophosmin
 
-fastq_dir='/home/local/BICR/cgiacome/data/CGIACOME/AAJ_NPM/GEO_submission_nucleophosmin'
+fastq_dir='this/is/the/folder/with/all/the/fastq/results'
 fastq_depo_dir=${parent_dir}/fastq_depo_rRNA
 
 fastqc_dir=${parent_dir}/fastQC_files
@@ -84,7 +84,7 @@ normalisation_binned_plots_dir=${plots_dir}/binned_plots/normalisation
 
 
 #Fastas
-fasta_dir='/home/local/BICR/cgiacome/data/R11/bioinformatics_resources/FASTAs/mouse'
+fasta_dir='this/is/the/folder/with/all/your/organism/FASTAs'
 
 rRNA_fasta=${fasta_dir}/rRNA/mouse_rRNA.fa
 tRNA_fasta=${fasta_dir}/tRNA/mouse_mature_tRNA.fa
