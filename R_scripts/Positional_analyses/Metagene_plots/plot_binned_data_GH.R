@@ -11,8 +11,8 @@ conflicts_prefer(purrr::reduce)
 
 #read in common variables & shared files----
 source("common_variables.R")
-signal_P_data <- read_csv(file = paste0(machine_dir, "/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/SignalP_6_prediction_results.csv"))
-region_lengths <- read_csv(file = paste0(machine_dir, "/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv"), 
+signal_P_data <- read_csv(file = "/FASTAs/mouse/GENCODE/vM27/transcript_info/SignalP_6_prediction_results.csv")
+region_lengths <- read_csv(file = "/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv", 
                            col_names = c("transcript", "UTR5_len", "CDS_len", "UTR3_len"))
 most_abundant_transcripts <- read_csv(file = file.path(parent_dir, "Analysis/most_abundant_transcripts/most_abundant_transcripts_IDs.csv"))
 
