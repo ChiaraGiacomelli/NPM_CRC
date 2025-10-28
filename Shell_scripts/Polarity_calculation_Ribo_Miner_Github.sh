@@ -4,8 +4,8 @@
 # put the genome_sorted.bam files also in the RiboMiner folder
 # from https://github.com/xryanglab/RiboMiner
 
-parent_dir='/home/local/BICR/cgiacome/data/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
-fasta_dir='/home/local/BICR/cgiacome/data/R11/bioinformatics_resources/FASTAs/mouse'
+parent_dir='this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
+fasta_dir='this/is/the/folder/with/all/your/organism/FASTAs'
 
 STAR_GTF=${fasta_dir}/GENCODE/vM27/original/gencode.vM27.annotation.gtf
 PRIMARY_ASSEMBLY=${fasta_dir}/GENCODE/vM27/original/GRCm39.primary_assembly.genome.fa
