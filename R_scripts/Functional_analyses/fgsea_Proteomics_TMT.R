@@ -23,7 +23,7 @@ mytheme <- theme_classic()+
         legend.text = element_text(size = 16))
 
 # read in proteomics results from excel file ------
-TMT <- read_excel(paste0(machine_dir, "/CGIACOME/AAJ_NPM/20230816_TMT_proteins/20231030_results/CHG_R11_160823_updated.xlsx"), sheet = "Proteome_Main")
+TMT <- read_excel(paste0(parent_dir, "/20231030_results/CHG_R11_160823_updated.xlsx"), sheet = "Proteome_Main")
 
 TMT %>% 
   rename("Gene_ID" = 1,
