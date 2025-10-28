@@ -1,18 +1,8 @@
 #Set the parent directory (this should be the same directory as is set in the common_variables.sh script
 
 # This file has the basic info used by multiple scripts in the subfolders handling the RPF and RNA reads/samples
-
-# choose your Machine
-# VM direct runs
-#machine_dir <- '~/data'
-# Rstudio on Windows at work
-#machine_dir <- 'N:'
-# VPN connected on Mac
-machine_dir <- '/Volumes/data-1'
-
-parent_dir <- paste0(machine_dir, '/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0')
-
-# setwd(paste0(parent_dir, "/R_scripts"))
+parent_dir <- 'this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved - same as used for Shell scripts
+# setwd(paste0(parent_dir, "/R_scripts")) # if needed
 
 #set sample names
 RPF_sample_names <- c('NPM_WT_1_RPFs', 'NPM_WT_2_RPFs', 'NPM_WT_3_RPFs', 'NPM_WT_4_RPFs', 'NPM_KO_1_RPFs', 'NPM_KO_2_RPFs', 'NPM_KO_3_RPFs', 'NPM_KO_4_RPFs')
