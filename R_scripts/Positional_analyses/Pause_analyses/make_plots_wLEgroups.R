@@ -17,41 +17,32 @@ conflicts_prefer(dplyr::filter)
 conflicts_prefer(dplyr::select)
 conflicts_prefer(purrr::reduce)
 
-# choose your Machine
-#VM
-#machine_dir <- '~/data'
-#Rstudio on Windows at work
-#machine_dir <- 'N:'
-# VPN connected on Mac
-machine_dir <- '/Volumes/data-1'
-
 control <- "WT"
 treatment <- "KO"
 
 Tissue <- "APC-KRAS"
 
 #read in common variables
-source(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0/R_scripts/common_variables.R"))
+source(paste0(parent_dir,"/R_scripts/common_variables.R"))
 
 #read in functions----
-source(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0/R_scripts/binning_RiboSeq_functions.R"))
-
+source(paste0(parent_dir,"/R_scripts/binning_RiboSeq_functions.R"))
 plot_dir <- paste0(parent_dir, "/plots/pauses/")
 
 # import pause tables
 # This is also shared here in the GitHub folder
-pauses <- read_csv(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20250117_data_Pauline/NPM_pause_analysis_20250331.csv"))
+pauses <- read_csv("NPM_pause_analysis_20250331.csv")
 
 #import most abundant transcripts info
-most_abundant_transcripts <- read_csv(file = paste0(machine_dir,"/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0/Analysis/most_abundant_transcripts/most_abundant_transcripts_IDs.csv"))
+most_abundant_transcripts <- read_csv(file = "most_abundant_transcripts/most_abundant_transcripts_IDs.csv"))
 
 #import region lengths table
-region_lengths <- read_csv(file = paste0(machine_dir, "/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv"),
+region_lengths <- read_csv(file = "/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv",
                                          col_names = c("transcript", "UTR5_len", "CDS_len", "UTR3_len"))
 
 # Codon properties tables are available here in the GitHub folder
-codon_AA <- read_csv(file = file.path(machine_dir,"CGIACOME/AAJ_NPM/20250117_data_Pauline/bioinformatics_resources_codons/codon_amino_acid_pairs_and_properties.csv"))
-codon_anticod <- read_csv(file = file.path(machine_dir,"CGIACOME/AAJ_NPM/20250117_data_Pauline/bioinformatics_resources_codons/codon_anticodon_pairs.csv"))
+codon_AA <- read_csv(file = "codon_amino_acid_pairs_and_properties.csv")
+codon_anticod <- read_csv(file = "codon_anticodon_pairs.csv")
 
 # Format table to have all info -----
 pauses %>%
@@ -162,7 +153,7 @@ plot_pauses_groups <- function(df, pathway) {
 # for every pathway, do the plot of the pause distribution across CDSs by pause type
 
 # fetch number of genes in each pathway - regardless of whether they are detected or not
-source(paste0(machine_dir,"/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0/R_scripts/read_mouse_GSEA_pathways.R"))
+source(paste0(parent_dir,"/R_scripts/read_mouse_GSEA_pathways.R"))
 
 ## read in leading edges HALLMARKS ---------
 LE_RPFs <- read_tsv(file = file.path(parent_dir, "plots/fgsea/scatters/AK_Npm1KO_Hallmark_RPF_BC_LeadEdge.tsv")) 
