@@ -8,7 +8,7 @@ source("common_variables.R")
 source("binning_RiboSeq_functions.R")
 
 #read in data----
-region_lengths <- read_csv(file = "~/data/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv", col_names = c("transcript", "UTR5_len", "CDS_len", "UTR3_len"))
+region_lengths <- read_csv(file = "/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_region_lengths.csv", col_names = c("transcript", "UTR5_len", "CDS_len", "UTR3_len"))
 
 #read in tpms----
 #this reads in the tpms for each transcript and gathers them in tidy format
