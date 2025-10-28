@@ -6,7 +6,7 @@ library(tximport)
 source("common_variables.R")
 
 #read in transcript and gene IDs
-transcript_to_gene_ID <- read_csv(file = "~/data/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_gene_IDs.csv", col_names = c("transcript", "gene", "gene_sym"))
+transcript_to_gene_ID <- read_csv(file = "/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_gene_IDs.csv", col_names = c("transcript", "gene", "gene_sym"))
 
 #create a vector of rsem isoform file names
 rsem_dir <- file.path(parent_dir, 'rsem')
