@@ -11,7 +11,7 @@ conflicts_prefer(dplyr::filter)
 
 # read in common variables
 source("common_variables.R")
-parent_dir <- paste0(machine_dir, '/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0')
+parent_dir <- 'this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
 setwd(paste0(parent_dir, "/R_scripts"))
 
 #create a variable for what the treatment is----
@@ -45,8 +45,8 @@ out_RPFs <- read_csv(file = file.path(parent_dir, "Analysis/DESeq2_output", "out
 # Supplementary table 2
 # These data was used in the response to reviewers with regards to the kind of ISR which is induced upon Npm1 KO
 
-Up_2B5_KO <- read_excel("/Users/chiara/Downloads/4th-Table2.xlsx", sheet = "Up shEif2b5 vs shCon (<0.05)")
-Dn_2B5_KO <- read_excel("/Users/chiara/Downloads/4th-Table2.xlsx", sheet = "Down shEif2b5 vs shCon (<0.05)")
+Up_2B5_KO <- read_excel("downloads/4th-Table2.xlsx", sheet = "Up shEif2b5 vs shCon (<0.05)")
+Dn_2B5_KO <- read_excel("downloads/4th-Table2.xlsx", sheet = "Down shEif2b5 vs shCon (<0.05)")
 
 Up_2B5_KO %>%
   filter(FDR < 1e-2) %>%
