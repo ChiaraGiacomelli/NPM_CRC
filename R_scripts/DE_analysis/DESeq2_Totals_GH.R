@@ -18,7 +18,7 @@ conflicts_prefer(dplyr::filter)
 
 # read in common variables
 source("common_variables.R")
-parent_dir <- paste0(machine_dir, '/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0')
+parent_dir <- 'this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved
 setwd(paste0(parent_dir, "/R_scripts"))
 
 #create a variable for what the treatment is----
@@ -28,7 +28,7 @@ TMT <- "NPM KO"
 
 #read in gene to transcript IDs map and rename and select ENSTM and ENSGM columns----
 #this is used by DESeq2 and needs to be in this structure
-tx2gene <- read_tsv(file = paste0(machine_dir, "/R11/bioinformatics_resources/FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_gene_IDs.txt"), col_names = F)
+tx2gene <- read_tsv(file = "FASTAs/mouse/GENCODE/vM27/transcript_info/gencode.vM27.pc_transcripts_gene_IDs.txt"), col_names = F)
 tx2gene %>%
   dplyr::rename(GENEID = X1,
                TXNAME = X2) %>%
