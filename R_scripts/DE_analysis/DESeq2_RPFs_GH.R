@@ -19,7 +19,7 @@ conflicts_prefer(dplyr::filter)
 
 # read in common variables
 source("common_variables.R")
-parent_dir <- paste0(machine_dir, '/CGIACOME/AAJ_NPM/20230622_RiboSeq_APCKRAS/Ribo-seq-Ribo-seq2.0')
+parent_dir <- 'this/is/your/main/data/folder' #This is the path to the parent directory that contains all the data and where all the processed data will be saved - same as common variables
 setwd(paste0(parent_dir, "/R_scripts"))
 
 #create a variable for what the treatment is----
